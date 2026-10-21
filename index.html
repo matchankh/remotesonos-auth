@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Remote Sonos – signing in…</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; text-align: center; padding: 30vh 24px 0; color: #1c1c1e; }
+    a { color: #c45a00; }
+  </style>
+</head>
+<body>
+  <p>Returning to Remote Sonos…</p>
+  <p><a id="open" href="#">Tap here if nothing happens</a></p>
+  <script>
+    // Sonos only accepts an https redirect. This page forwards code and state to the app.
+    // The scheme must match CFBundleURLSchemes and SONOS_CALLBACK_SCHEME (remotesonos).
+    var target = "remotesonos://oauth" + window.location.search + window.location.hash;
+    var link = document.getElementById("open");
+    link.href = target;
+    window.location.replace(target);
+  </script>
+</body>
+</html>
